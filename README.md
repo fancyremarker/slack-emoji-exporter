@@ -19,13 +19,15 @@ A simple Python tool to export custom emojis from one Slack workspace to another
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/slack-emoji-exporter.git
+git clone https://github.com/fancyremarker/slack-emoji-exporter.git
 cd slack-emoji-exporter
 ```
 
-2. Install required dependencies:
+2. Install required dependencies (using uv and a venv):
 ```bash
-pip install requests
+uv venv
+uv pip install -r requirements.txt
+uv run ./slack_emoji_exporter.py
 ```
 
 ## Usage
@@ -74,7 +76,7 @@ python slack_emoji_exporter.py download --source-token xoxb-your-token-here
 #### Upload emojis to another workspace
 
 ```bash
-python slack_emoji_exporter.py upload --cookie "your-cookie-value-here" --team-id T012AB3C4
+python slack_emoji_exporter.py upload --cookie "your-cookie-value-here" --token "xoxc-your-token-here" --team-id T012AB3C4
 ```
 
 #### Complete export process
